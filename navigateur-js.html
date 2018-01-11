@@ -43,8 +43,8 @@ function chooseABCD(decision) {
     }
 }
 function capp() {
-    var e = prompt("Saisir A, B, C, D pour la compétence s'approprier");
-    var f = chooseABCD(e);
+    e = prompt("Saisir A, B, C, D pour la compétence s'approprier");
+    f = chooseABCD(e);
     document.getElementById("app").innerHTML =
         "Vous aviez saisi " + e + " pour la compétence s'approprier.";
 }
@@ -73,8 +73,8 @@ function chooseABCD(decision) {
     }
 }
 function cval() {
-    var g = prompt("Saisir A, B, C, D pour la compétence valider");
-    var h = chooseABCD(g);
+   g = prompt("Saisir A, B, C, D pour la compétence valider");
+    h = chooseABCD(g);
     document.getElementById("val").innerHTML =
         "Vous aviez saisi " + g + " pour la compétence valider.";
 }
@@ -103,8 +103,8 @@ function chooseABCD(decision) {
     }
 }
 function cana() {
-    var i = prompt("Saisir A, B, C, D pour la compétence analyser");
-    var j = chooseABCD(i);
+    i = prompt("Saisir A, B, C, D pour la compétence analyser");
+    j = chooseABCD(i);
     document.getElementById("ana").innerHTML =
         "Vous aviez saisi " + i + " pour la compétence analyser.";
 }
@@ -133,8 +133,8 @@ function chooseABCD(decision) {
     }
 }
 function crea() {
-    var k = prompt("Saisir A, B, C, D pour la compétence reáliser");
-    var l = chooseABCD(k);
+    k = prompt("Saisir A, B, C, D pour la compétence reáliser");
+    l = chooseABCD(k);
     document.getElementById("rea").innerHTML =
         "Vous aviez saisi " + k + " pour la compétence réaliser.";
 }
@@ -163,8 +163,8 @@ function chooseABCD(decision) {
     }
 }
 function ccom() {
-    var m = prompt("Saisir A, B, C, D pour la compétence communiquer");
-    var n = chooseABCD(m);
+    m = prompt("Saisir A, B, C, D pour la compétence communiquer");
+    n = chooseABCD(m);
     document.getElementById("com").innerHTML =
     "Vous aviez saisi " + m + " pour la compétence communiquer.";
 }
@@ -174,21 +174,21 @@ function ccom() {
 <button type="button" onclick="note()">Calculer!</button>
 <p id="note"></p>
 <script>
-var app=0
-var val=1
-var ana=2
-var rea=1
-var com=0
-var total=20
-var arr=1
-var mini=4
+//var app=0
+//var val=1
+//var ana=2
+//var rea=1
+//var com=0
+//var total=20
+//var arr=1
+//var mini=4
 function note() {
-  var note=Math.round((1*20*(4+(20-4)))/((0+1+2+1+0)*4)*(f*0+h*1+j*2+1*l+n*0+(0+1+2+1+0)*2)/20+0.50)/1)
+  var note=Math.round(400/(16*(f*0+h*1+j*2+1*l+n*0+(0+1+2+1+0)*2)/(20+0.50)/1)
   document.getElementById("note").innerHTML =
-  "La note du candidat est égal à" + note + " .";
+  "La note du candidat est égal à " + note + " .";
 }
 </script>
 
 </body>
 
-<html>
+</html>
