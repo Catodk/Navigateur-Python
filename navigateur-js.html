@@ -15,6 +15,25 @@ p {
     font-family: Courier;
     font-size: 20px;
 }
+button {
+    background-color: black;
+    border: gray;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: courier;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 25%
+}
+button:hover{
+  background-color: white;
+  color: black
+}
 </style>
 
 <body>
@@ -76,7 +95,7 @@ document.getElementById("com").innerHTML="Vous avez saisi "+m+" pour la compéte
 <p id="note"></p>
 <script>
 function note(){
-  e=Math.round(25*(0*f+1*h+2*j+1*l+0*n+8)/20+0.5);
+  e=Math.round(25*(0*f+1*h+2*j+1*l+0*n+8)/20+0.5/20);
   document.getElementById("note").innerHTML="La note du candidat est égal à "+e+" ."}
 </script>
 
