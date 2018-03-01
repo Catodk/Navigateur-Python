@@ -66,23 +66,13 @@ function change_note1()
     if (note1 == 'D') app_note.innerHTML = 'A' ;
   }
 
-//marche surement pas
-  function valeurcoef ()
-  {
-    if (coef1=='1') val_coef_app=1
-    if (coef1=='2') val_coef_app=2
-    if (coef1=='3') val_coef_app=3
-    if (coef1=='0') val_coef_app=0
-  }
+function choose0123(e){return"0"==e?0:"1"==e?1:"2"==e?2:"3"==e?3:0}
+  coef1 = document.getElementById('app_coef').textContent;
+  val_coef_app=choose0123(coef1)
+function chooseABCD(e){return"A"==e?2:"B"==e?1:"C"==e?-1:"D"==e?-2:0}
+note1 = document.getElementById('app_note').textContent;
+val_note_app= chooseABCD(note1)
 
-//marche surement pas
-function valeurcoef()
-{
-  if (note1 == 'A') val_note_app = 2;
-  if (note1 == 'B') val_note_app = 1;
-  if (note1 == 'C') val_note_app = -1;
-  if (note1 == 'D') val_note_app = -2;
-}
   </script>
 
   <p>Saisir A, B, C ou D pour la compétence "valider" en cliquant sur le bouton:</p>
@@ -203,7 +193,10 @@ function valeurcoef()
 
 <script>
 function notefinale(){
-  notefin=Math.round(25*(val_coef_app*val_note_app+val_coef_val*val_note_val+val_coef_com*val_note_com+val_coef_rea*val_note_rea+val_coef_ana*val_note_ana+8)/20+0.5/20);
+//test:
+notefin=val_coef_app*val_note_app
+// vrai truc:
+//notefin=Math.round(25*(val_coef_app*val_note_app+val_coef_val*val_note_val+val_coef_com*val_note_com+val_coef_rea*val_note_rea+val_coef_ana*val_note_ana+8)/20+0.5/20);
   document.getElementById("notefinale").innerHTML="La note du candidat est égal à "+notefin+" ."}
 </script>
 
