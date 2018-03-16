@@ -24,7 +24,7 @@
             cursor: pointer;
             font-family: courier;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            width: 25%
+            width: 25%;
             display: block;
     	      margin:0 auto;
         }
@@ -34,59 +34,50 @@
         }
     </style>
     <script>
-        var anaCoef, appCoef, valCoef, reaCoef, comCoef, anaNote, appNote, valNote, reaNote, comNote;
+        var anaCoef = 0, appCoef = 0, valCoef = 0, reaCoef = 0, comCoef = 0, anaNote = 2,
+            appNote = 2, valNote = 2, reaNote = 2, comNote = 2;
 
         function change_coef(coefv, coefn)
         {
-          coefn = document.getElementById(coefv).textContent;
-          coefn++;
-          if (coefn == 4) {
-              coefn = 0;
-          }
-          app_coef.innerHTML = coefn
+            coefn = document.getElementById(coefv).textContent;
+            coefn++;
+            if (coefn == 4) {
+                coefn = 0;
+            }
+            document.getElementById(coefv).innerHTML = coefn;
+            return coefn;
         }
 
         function change_note(notev, noten)
         {
-
-          var noteir = document.getElementById(notev).textContent;                  
-          if (noteir == 'A') {
-              app_note.innerHTML = 'B';
-              noten = 1;
-          }
-          if (noteir == 'B') {
-              app_note.innerHTML = 'C';
-              noten = -1;
-          }
-          if (noteir == 'C') {
-              app_note.innerHTML = 'D';
-              noten = -2;
-          }
-          if (noteir == 'D') {
-              app_note.innerHTML = 'A';
-              noten = -1;
-          }
+            var noteir = document.getElementById(notev).textContent;                  
+            if (noteir == 'A') {
+              document.getElementById(notev).innerHTML = 'B';
+                noten = 1;
+            }
+            if (noteir == 'B') {
+              document.getElementById(notev).innerHTML = 'C';
+                noten = -1;
+            }
+            if (noteir == 'C') {
+              document.getElementById(notev).innerHTML = 'D';
+                noten = -2;
+            }
+            if (noteir == 'D') {
+              document.getElementById(notev).innerHTML = 'A';
+                noten = 2;
+            }
+            return noten;
             
         }
 
-        //function choose0123(e){return"0"==e?0:"1"==e?1:"2"==e?2:"3"==e?3:404}
-        //coef1 = app_coef
-        //val_coef_app=choose0123(coef1)
-
-
-        //function chooseABCD(e){
-        //return"A"==e?2:"B"==e?1:"C"==e?-1:"D"==e?-2:404
-        //}
-        //note1 = document.getElementById(comp).textContent
-        //val_note_app= chooseABCD(note1)
 
         function notefinale(){
         //test:
-          alert(val_note_app)
-        //notefin=val_coef_app*val_note_app
         // vrai calcul:
-        //notefin=Math.round(25*(val_coef_app*val_note_app+val_coef_val*val_note_val+val_coef_com*val_note_com+val_coef_rea*val_note_rea+val_coef_ana*val_note_ana+8)/20+0.5/20);
-        //  document.getElementById("notefinale").innerHTML="La note du candidat est égal à "+notefin+" ."
+        var notefin = Math.round(25*(anaNote*anaCoef+reaCoef*reaNote+comCoef*comNote+appCoef*appNote+valCoef*valNote+8)/20+0.5/20);
+        document.getElementById("notefinale").innerHTML="La note du candidat est égal à "+notefin+" .";
+        alert(notefin);
         }
 
     </script>
@@ -96,12 +87,12 @@
   <body>
     <h1>Calculer la note d'un candidat pour les ECE</h1><br>
     <p>Saisir A, B, C ou D pour la compétence "s'approprier" en cliquant sur le bouton:</p>
-    <button type="button" onclick="change_coef('app_coef')" >
+    <button type="button" onclick="appCoef = change_coef('app_coef',appCoef)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="app_coef">0</a>
       </div>
     </button>
-    <button type="button" onclick="change_note('app_note')">
+    <button type="button" onclick="appNote = change_note('app_note',appNote)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="app_note">A</a>
       </div>
@@ -109,12 +100,12 @@
 
 
     <p>Saisir A, B, C ou D pour la compétence "valider" en cliquant sur le bouton:</p>
-    <button type="button" onclick="change_coef('val_coef')" >
+    <button type="button" onclick="valCoef = change_coef('val_coef',valCoef)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="val_coef" >0</a>
       </div>
     </button>
-    <button type="button" onclick="change_note('val_note')">
+    <button type="button" onclick="valNote = change_note('val_note',valNote)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="val_note" >A</a>
       </div>
@@ -122,32 +113,32 @@
 
 
     <p>Saisir A, B, C ou D pour la compétence "analyser" en cliquant sur le bouton:</p>
-    <button type="button" onclick="change_coef('ana_coef')">
+    <button type="button" onclick="anaCoef = change_coef('ana_coef',anaCoef)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="ana_coef" >0</a>
     </button>
-    <button type="button" onclick="change_note('ana_note')">
+    <button type="button" onclick="anaNote = change_note('ana_note',anaNote)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="ana_note" >A</a>
     </button>
 
 
     <p>Saisir A, B, C ou D pour la compétence "réaliser" en cliquant sur le bouton:</p>
-    <button type="button" onclick="change_coef('rea_coef')">
+    <button type="button" onclick="reaCoef = change_coef('rea_coef',reaCoef)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="rea_coef" >0</a>
     </button>
-    <button type="button" onclick="change_note('rea_note')">
+    <button type="button" onclick="reaNote = change_note('rea_note',reaNote)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="rea_note" >A</a>
     </button>
 
     <p>Saisir A, B, C ou D pour la compétence "communiquer" en cliquant sur le bouton:</p>
-    <button type="button" onclick="change_coef('com_coef')">
+    <button type="button" onclick="comCoef = change_coef('com_coef',comCoef)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="com_coef" >0</a>
     </button>
-    <button type="button" onclick="change_note('com_note')">
+    <button type="button" onclick="comNote = change_note('com_note',comNote)" class="waves-effect waves-light btn">
       <div class="container">
         <a id="com_note" >A</a>
     </button>
