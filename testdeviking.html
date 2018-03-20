@@ -34,54 +34,7 @@
           color: black
         }
     </style>
-    <script>
-        var anaCoef = 0, appCoef = 0, valCoef = 0, reaCoef = 0, comCoef = 0, anaNote = 2,
-            appNote = 2, valNote = 2, reaNote = 2, comNote = 2;
-
-        function change_coef(coefv, coefn)
-        {
-            coefn = document.getElementById(coefv).textContent;
-            coefn++;
-            if (coefn == 4) {
-                coefn = 0;
-            }
-            document.getElementById(coefv).innerHTML = coefn;
-            return coefn;
-        }
-
-        function change_note(notev, noten)
-        {
-            var noteir = document.getElementById(notev).textContent;                  
-            if (noteir == 'A') {
-              document.getElementById(notev).innerHTML = 'B';
-                noten = 1;
-            }
-            if (noteir == 'B') {
-              document.getElementById(notev).innerHTML = 'C';
-                noten = -1;
-            }
-            if (noteir == 'C') {
-              document.getElementById(notev).innerHTML = 'D';
-                noten = -2;
-            }
-            if (noteir == 'D') {
-              document.getElementById(notev).innerHTML = 'A';
-                noten = 2;
-            }
-            return noten;
-            
-        }
-
-
-        function notefinale(){
-        //test:
-        // vrai calcul:
-        var notefin = Math.round(25*(anaNote*anaCoef+reaCoef*reaNote+comCoef*comNote+appCoef*appNote+valCoef*valNote+8)/20+0.5/20);
-        document.getElementById("notefinale").innerHTML="La note du candidat est égal à "+notefin+" .";
-        alert(notefin);
-        }
-
-    </script>
+    <script src="vikingjs.js"></script> 
   </head>
 
 
