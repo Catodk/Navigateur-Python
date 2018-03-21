@@ -40,10 +40,10 @@ function notefinale(){
 var coefSum = anaCoef + reaCoef + appCoef + comCoef + valCoef;
 
 //On calcule enfin la note finale et la partie variable de la formule.
-var calcn = (anaCoef*anaNote + reaCoef*reaNote + appCoef * appNote + comCoef*comNote + valCoef * valNote + 2 * coefSum);
-var notefin = ((20/coefSum)*calcn + 0.5)/4;
+var calcn = (anaCoef*anaNote + reaCoef*reaNote + appCoef * appNote + comCoef*comNote + valCoef * valNote )/(2 * coefSum);
+var notefin = 12 + calcn * 8;
 
 //On fait un retour de la formule.   
-document.getElementById("notefinale").innerHTML="La note du candidat est égal à "+notefin+" .";
+document.getElementById("notefinale").innerHTML="La note du candidat est égal à "+notefin+".";
 alert(notefin);
 }
